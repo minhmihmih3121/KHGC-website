@@ -61,6 +61,16 @@ final class Acl
 
     const PERMISSION_CUSTOMER_DELETE = 'customer delete';
 
+    const PERMISSION_SECTION_MANAGE = 'manage section';
+
+    const PERMISSION_SECTION_LIST = 'section list';
+
+    const PERMISSION_SECTION_ADD = 'section add';
+
+    const PERMISSION_SECTION_EDIT = 'section edit';
+
+    const PERMISSION_SECTION_DELETE = 'section delete';
+
     /**
      * @param  array  $exclusives Exclude some permissions from the list
      */

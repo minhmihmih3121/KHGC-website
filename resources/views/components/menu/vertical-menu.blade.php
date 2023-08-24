@@ -40,14 +40,11 @@
         <ul class="list-unstyled menu-categories" id="menu-nav-bar">
             @foreach($menuItems as $menuItem)
                 @if ($menuItem['show'])
-                    <li class="menu {{ $menuItem['active'] ? 'active' : '' }}">
-                        <a href="{{ $menuItem['child'] ? '#item' . $loop->index : $menuItem['url'] }}"
-                           {{ $menuItem['child'] ? 'data-bs-toggle="collapse"' : '' }}
-                           aria-expanded="{{ $menuItem['child'] ? 'true' : 'false' }}"
-                           class="dropdown-toggle">
+                    <li class="menu">
+                        <a href="{{ $menuItem['child'] ? '#item' . $loop->index : $menuItem['url'] }}" {{ $menuItem['child'] ? 'data-toggle=collapse' : '' }} data-active="{{ $menuItem['active'] ? 'true' : 'false' }}" aria-expanded="{{ $menuItem['active'] ? 'true' : 'false' }}" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="{{ $menuItem['icon'] }}"></i>
-                                <span>Dashboard</span>
+                                <span>{{ $menuItem['title'] }}</span>
                             </div>
                             @if ($menuItem['child'])
                                 <div>
@@ -55,6 +52,7 @@
                                 </div>
                             @endif
                         </a>
+
                         @if ($menuItem['child'])
                             <ul class="collapse submenu list-unstyled {{ $menuItem['active'] ? 'show' : '' }}"
                                 id="{{ 'item' . $loop->index }}" data-parent="#accordionExample">

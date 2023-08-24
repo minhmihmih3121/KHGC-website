@@ -41,6 +41,22 @@ class VerticalMenu extends Component
                 'show' => checkPermissions([Acl::PERMISSION_VIEW_MENU_DASHBOARD]),
                 'child' => []
             ],
+            [
+                'title' => __('general.menu.banner_management.title'),
+                'url' => '',
+                'icon' => 'image',
+                'active' => Route::is(['admin.section.*']),
+                'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE]),
+                'child' => [
+                    [
+                        'title' => __('general.menu.banner_management.section'),
+                        'url' => route('admin.section.index'),
+                        'icon' => 'image',
+                        'active' => Route::is(['admin.section.*']),
+                        'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE])
+                    ]
+                ]
+            ],
         ];
     }
 }

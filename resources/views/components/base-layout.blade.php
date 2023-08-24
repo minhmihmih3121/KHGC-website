@@ -106,6 +106,10 @@
             <script src="{{asset('plugins/mousetrap/mousetrap.min.js')}}"></script>
             <script src="{{asset('plugins/waves/waves.min.js')}}"></script>
             <script src="{{asset('plugins/highlight/highlight.pack.js')}}"></script>
+            <script src="{{ asset('plugins/font-icons/feather/feather.min.js') }}"></script>
+            <script type="text/javascript">
+                feather.replace();
+            </script>
             @if ($scrollspy == 1)
                 @vite(['resources/assets/js/scrollspyNav.js'])
             @endif
