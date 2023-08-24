@@ -14,6 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::namespace(env('BASE_API'))->name('api.')->middleware(['api'])->group(function () {
+
+    //Unauthenticated Routes
+    Route::group(['middleware' => ['api_key']], function () {
+        Route::group(['prefix' => 'auth'], function () {
+            //
+        });
+
+        Route::group(['prefix' => 'v1'], function () {
+            include('v1/api/section.php');
+            include('v1/api/banner.php');
+        });
+    });
+
+    //Authenticated Routes
+    Route::group(['middleware' => 'auth:sanctum'], function () {
+        // Auth routes
+
+        Route::group(['prefix' => 'v1', 'middleware' => ['api_key']], function () {
+            //
+        });
+    });
 });

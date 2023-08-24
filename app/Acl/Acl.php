@@ -39,37 +39,39 @@ final class Acl
 
     const PERMISSION_VIEW_TELESCOPE = 'view telescope';
 
+    const PERMISSION_VIEW_API_DOCUMENTATION = 'view api docs';
+
     const PERMISSION_PERMISSION_MANAGE = 'manage permission';
 
     const PERMISSION_USER_MANAGE = 'manage user';
 
-    const PERMISSION_USER_LIST = 'user list';
+    const PERMISSION_USER_LIST   = 'user list';
 
-    const PERMISSION_USER_ADD = 'user add';
+    const PERMISSION_USER_ADD    = 'user add';
 
-    const PERMISSION_USER_EDIT = 'user edit';
+    const PERMISSION_USER_EDIT   = 'user edit';
 
     const PERMISSION_USER_DELETE = 'user delete';
 
     const PERMISSION_CUSTOMER_MANAGE = 'manage customer';
 
-    const PERMISSION_CUSTOMER_LIST = 'customer list';
+    const PERMISSION_CUSTOMER_LIST   = 'customer list';
 
-    const PERMISSION_CUSTOMER_ADD = 'customer add';
+    const PERMISSION_CUSTOMER_ADD    = 'customer add';
 
-    const PERMISSION_CUSTOMER_EDIT = 'customer edit';
+    const PERMISSION_CUSTOMER_EDIT   = 'customer edit';
 
-    const PERMISSION_CUSTOMER_DELETE = 'customer delete';
+    const PERMISSION_CUSTOMER_DELETE   = 'customer delete';
 
-    const PERMISSION_SECTION_MANAGE = 'manage section';
+    const PERMISSION_SECTION_MANAGE    = 'manage section';
 
-    const PERMISSION_SECTION_LIST = 'section list';
+    const PERMISSION_SECTION_LIST      = 'section list';
 
-    const PERMISSION_SECTION_ADD = 'section add';
+    const PERMISSION_SECTION_ADD     = 'section add';
 
-    const PERMISSION_SECTION_EDIT = 'section edit';
+    const PERMISSION_SECTION_EDIT    = 'section edit';
 
-    const PERMISSION_SECTION_DELETE = 'section delete';
+    const PERMISSION_SECTION_DELETE  = 'section delete';
 
     /**
      * @param  array  $exclusives Exclude some permissions from the list

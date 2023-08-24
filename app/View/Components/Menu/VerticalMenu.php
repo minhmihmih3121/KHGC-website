@@ -57,6 +57,14 @@ class VerticalMenu extends Component
                     ]
                 ]
             ],
+            [
+                'title' => __('general.menu.api-docs'),
+                'url' => '/docs',
+                'icon' => 'file-text',
+                'active' => Route::is(['scribe']),
+                'show' => checkPermissions([Acl::PERMISSION_VIEW_API_DOCUMENTATION]),
+                'child' => [],
+            ]
         ];
     }
 }

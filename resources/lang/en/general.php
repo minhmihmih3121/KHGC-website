@@ -18,7 +18,8 @@ return [
             'title' => 'Manage Banners',
             'section' => 'Sections',
             'banner' => 'Banner'
-        ]
+        ],
+        'api-docs' => 'Api Documentations'
     ],
     'dashboard' => [
         'title' => 'Dashboard',

@@ -128,6 +128,28 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Api Key
+    |--------------------------------------------------------------------------
+    |
+    | This key is used to validate the requests coming to the unauthenticated routes.
+    |
+    */
+
+    'api_key' => env('API_KEY', 'RANDOM_STUFF'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Image General
+    |--------------------------------------------------------------------------
+    |
+    | This key is used for default image when the image cannot be loaded
+    |
+    */
+
+    'default_img' => config('app.default_img', '/frontend-assets/images/products/no-img.png'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Maintenance Mode Driver
     |--------------------------------------------------------------------------
     |
