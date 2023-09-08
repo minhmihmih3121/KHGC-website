@@ -16,7 +16,7 @@ return [
         'dashboard' => 'Dashboard',
         'banner_management' => [
             'title' => 'Manage Banners',
-            'section' => 'Sections',
+            'section' => 'Section',
             'banner' => 'Banner'
         ],
         'api-docs' => 'Api Documentations'
@@ -28,6 +28,14 @@ return [
     ],
 
     'common' => [
-
+        'create' => 'Create',
+        'dismiss' => 'Dismiss',
+        'edit' => 'Edit',
+        'heading' => 'Heading',
+        'result' => 'Results',
+        'search' => 'Search',
+        'show' => 'Show',
+        'showing_page' => 'Showing page :page of :pages',
+        'sub_heading' => 'Sub heading',
     ]
 ];

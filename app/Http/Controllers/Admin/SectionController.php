@@ -6,6 +6,7 @@ use App\Acl\Acl;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Section\StoreSectionRequest;
 use App\Http\Requests\Section\UpdateSectionRequest;
+use App\Http\Resources\Admin\SectionResource;
 use App\Models\Section;
 use App\Services\SectionService;
 use Illuminate\Http\Request;
@@ -27,9 +28,10 @@ class SectionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $sections = Section::all();
+        return view('admin.section.index', compact('sections'));
     }
 
     /**
@@ -37,18 +39,22 @@ class SectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.section.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param StoreSectionRequest $request
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreSectionRequest $request)
     {
-        //
+        $section = $this->sectionService->create($request->validated());
+        if ($section) {
+            session()->flash(NOTIFICATION_SUCCESS, __('success.section.create'));
+            return to_route('admin.section.index');
+        }
     }
 
     /**
@@ -66,11 +72,11 @@ class SectionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Section $section
-     * @return void
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function edit(Section $section)
     {
-        //
+        return view('admin.section.edit', compact('section'));
     }
 
     /**
@@ -78,11 +84,15 @@ class SectionController extends Controller
      *
      * @param UpdateSectionRequest $request
      * @param Section $section
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateSectionRequest $request, Section $section)
     {
-        //
+        $section = $this->sectionService->update($section, $request->validated());
+        if ($section) {
+            session()->flash(NOTIFICATION_SUCCESS, __('success.section.update'));
+            return to_route('admin.section.index');
+        }
     }
 
     /**
@@ -94,5 +104,15 @@ class SectionController extends Controller
     public function destroy(Section $section)
     {
         //
+    }
+
+    /**
+     * Toggle status of the section
+     *
+     * @param Section $section
+     */
+    public function toggleStatus(Section $section)
+    {
+        return $this->sectionService->toggleStatus($section);
     }
 }

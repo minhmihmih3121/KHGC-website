@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-        <title>Nettrust Center | {{ $pageTitle }}</title>
-        <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/images/favicon-nettrust.webp')}}"/>
+        <title>KHCG | {{ $pageTitle }}</title>
+        <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/images/favicon-KHGC.svg')}}"/>
         @vite(['resources/scss/layouts/modern-light-menu/light/loader.scss'])
         @vite(['resources/layouts/modern-light-menu/loader.js'])
 
@@ -101,6 +101,7 @@
                 !$disableHeader
             )
             <!-- BEGIN GLOBAL MANDATORY STYLES -->
+            <script src="{{asset('plugins/global/vendors.min.js')}}"></script>
             <script src="{{asset('plugins/bootstrap/bootstrap.bundle.min.js')}}"></script>
             <script src="{{asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
             <script src="{{asset('plugins/mousetrap/mousetrap.min.js')}}"></script>
@@ -119,5 +120,7 @@
         @endif
 
         {{$footerFiles}}
+
+        @include('includes.notifications')
     </body>
 </html>

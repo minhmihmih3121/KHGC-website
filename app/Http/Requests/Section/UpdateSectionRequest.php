@@ -24,7 +24,7 @@ class UpdateSectionRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'fixed_key' => ['required', 'unique:sections,' . $this->id]
+            'fixed_key' => ['required', 'unique:sections,id,' . $this->id]
         ];
     }
 }

@@ -45,15 +45,20 @@ class VerticalMenu extends Component
                 'title' => __('general.menu.banner_management.title'),
                 'url' => '',
                 'icon' => 'image',
-                'active' => Route::is(['admin.section.*']),
-                'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE]),
+                'active' => Route::is(['admin.section.*', 'admin.banner.*']),
+                'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE, Acl::PERMISSION_BANNER_MANAGE]),
                 'child' => [
                     [
                         'title' => __('general.menu.banner_management.section'),
                         'url' => route('admin.section.index'),
-                        'icon' => 'image',
                         'active' => Route::is(['admin.section.*']),
                         'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE])
+                    ],
+                    [
+                        'title' => __('general.menu.banner_management.banner'),
+                        'url' => route('admin.banner.index'),
+                        'active' => Route::is(['admin.banner.*']),
+                        'show' => checkPermissions([Acl::PERMISSION_BANNER_MANAGE])
                     ]
                 ]
             ],

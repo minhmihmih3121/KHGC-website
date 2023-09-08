@@ -3,18 +3,22 @@
 namespace App\Services;
 
 use App\Models\Section;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Arr;
 
-class SectionService
+class SectionService extends BaseModelService
 {
-    private $model;
+    /**
+     * @inheritdoc
+     */
+    protected $model;
 
-    public function __construct(Section $section)
+    /**
+     * @inheritdoc
+     */
+    public function __construct(Section $model)
     {
-        $this->model = $section;
-    }
-
-    public function create($data)
-    {
-
+        $this->model = $model;
+        parent::__construct($model);
     }
 }

@@ -23,6 +23,7 @@ class BannerFactory extends Factory
             'section_id' => $section->id,
             'heading' => fake()->sentence(2),
             'sub_heading' => fake()->sentence(5),
+            'cover_color' => '#FFFFFF',
             'status' => Banner::STT_ENABLE
         ];
     }

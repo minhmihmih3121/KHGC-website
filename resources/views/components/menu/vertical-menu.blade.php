@@ -2,12 +2,13 @@
     <nav id="sidebar">
         <!-- Logo -->
         <div class="navbar-nav theme-brand flex-row  text-center">
-            <div class="nav-logo">
+            <div class="nav-logo flex-grow-1 justify-content-center">
                 <div class="nav-item theme-text">
                     <a href="{{ route('admin.dashboard') }}" class="nav-link">
-                        <img src="{{Vite::asset('resources/images/NET-TRUST-TT_200x.avif')}}"
-                             class="navbar-logo logo-light"
-                             alt="logo" style="width: 80%">
+                        <span class="navbar-logo logo-light">KHGC</span>
+{{--                        <img src="{{Vite::asset('resources/images/NET-TRUST-TT_200x.avif')}}"--}}
+{{--                             class="navbar-logo logo-light"--}}
+{{--                             alt="logo" style="width: 80%">--}}
                     </a>
                 </div>
             </div>
@@ -37,36 +38,34 @@
             </div>
         @endif
         <div class="shadow-bottom"></div>
-        <ul class="list-unstyled menu-categories" id="menu-nav-bar">
+        <ul class="list-unstyled menu-categories" id="accordionExample">
             @foreach($menuItems as $menuItem)
-                @if ($menuItem['show'])
-                    <li class="menu">
-                        <a href="{{ $menuItem['child'] ? '#item' . $loop->index : $menuItem['url'] }}" {{ $menuItem['child'] ? 'data-toggle=collapse' : '' }} data-active="{{ $menuItem['active'] ? 'true' : 'false' }}" aria-expanded="{{ $menuItem['active'] ? 'true' : 'false' }}" class="dropdown-toggle">
-                            <div class="">
-                                <i data-feather="{{ $menuItem['icon'] }}"></i>
-                                <span>{{ $menuItem['title'] }}</span>
-                            </div>
-                            @if ($menuItem['child'])
-                                <div>
-                                    <i data-feather="chevron-right"></i>
-                                </div>
-                            @endif
-                        </a>
-
+                <li class="menu {{ $menuItem['active'] ? 'active' : '' }}">
+                    <a href="{{ $menuItem['child'] ? '#item' . $loop->index : $menuItem['url'] }}" {{ $menuItem['child'] ? 'data-bs-toggle=collapse' : '' }} aria-expanded="{{ $menuItem['active'] ? 'true' : 'false' }}" class="dropdown-toggle">
+                        <div class="">
+                            <i data-feather="{{ $menuItem['icon'] }}"></i>
+                            <span>{{ $menuItem['title'] }}</span>
+                        </div>
                         @if ($menuItem['child'])
-                            <ul class="collapse submenu list-unstyled {{ $menuItem['active'] ? 'show' : '' }}"
-                                id="{{ 'item' . $loop->index }}" data-parent="#accordionExample">
-                                @foreach ($menuItem['child'] as $menuItemChild)
-                                    @if ($menuItemChild['show'])
-                                        <li class="{{ $menuItemChild['active'] ? 'active' : '' }}">
-                                            <a href="{{ $menuItemChild['url'] }}"> {{ $menuItemChild['title'] }} </a>
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
+                            <div>
+                                <i data-feather="chevron-right"></i>
+                            </div>
                         @endif
-                    </li>
-                @endif
+                    </a>
+
+                    @if ($menuItem['child'])
+                        <ul class="collapse submenu list-unstyled {{ $menuItem['active'] ? 'show' : '' }}"
+                            id="{{ 'item' . $loop->index }}" data-bs-parent="#accordionExample">
+                            @foreach ($menuItem['child'] as $menuItemChild)
+                                @if ($menuItemChild['show'])
+                                    <li class="{{ $menuItemChild['active'] ? 'active' : '' }}">
+                                        <a href="{{ $menuItemChild['url'] }}"> {{ $menuItemChild['title'] }} </a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    @endif
+                </li>
             @endforeach
         </ul>
     </nav>

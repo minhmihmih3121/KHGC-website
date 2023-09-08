@@ -12,5 +12,6 @@ Route::prefix('admin')->group(function () {
         ->group(function () {
         include('admin/dashboard.php');
         include('admin/section.php');
+        include('admin/banner.php');
     });
 });

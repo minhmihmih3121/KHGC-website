@@ -63,15 +63,18 @@ final class Acl
 
     const PERMISSION_CUSTOMER_DELETE   = 'customer delete';
 
-    const PERMISSION_SECTION_MANAGE    = 'manage section';
+    const PERMISSION_SECTION_MANAGE = 'manage section';
+    const PERMISSION_SECTION_LIST   = 'section list';
+    const PERMISSION_SECTION_ADD    = 'section add';
 
-    const PERMISSION_SECTION_LIST      = 'section list';
+    const PERMISSION_SECTION_EDIT   = 'section edit';
+    const PERMISSION_SECTION_DELETE = 'section delete';
 
-    const PERMISSION_SECTION_ADD     = 'section add';
-
-    const PERMISSION_SECTION_EDIT    = 'section edit';
-
-    const PERMISSION_SECTION_DELETE  = 'section delete';
+    const PERMISSION_BANNER_MANAGE    = 'manage banner';
+    const PERMISSION_BANNER_LIST      = 'banner list';
+    const PERMISSION_BANNER_ADD       = 'banner add';
+    const PERMISSION_BANNER_EDIT      = 'banner edit';
+    const PERMISSION_BANNER_DELETE    = 'banner delete';
 
     /**
      * @param  array  $exclusives Exclude some permissions from the list
