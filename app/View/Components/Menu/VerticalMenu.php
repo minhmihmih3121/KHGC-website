@@ -63,6 +63,27 @@ class VerticalMenu extends Component
                 ]
             ],
             [
+                'title' => __('general.menu.project_management.title'),
+                'url' => '',
+                'icon' => 'folder',
+                'active' => Route::is(['admin.project.*', 'admin.project_type.*']),
+                'show' => checkPermissions([Acl::PERMISSION_PROJECT_MANAGE, Acl::PERMISSION_PROJECT_TYPE_MANAGE]),
+                'child' => [
+                    [
+                        'title' => __('general.menu.project_management.project'),
+                        'url' => route('admin.project.index'),
+                        'active' => Route::is(['admin.project.*']),
+                        'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE]),
+                    ],
+                    [
+                        'title' => __('general.menu.project_type_management.project_type'),
+                        'url' => route('admin.project_type.index'),
+                        'active' => Route::is(['admin.projecttype.*']),
+                        'show' => checkPermissions([Acl::PERMISSION_SECTION_MANAGE]),
+                    ],
+                ]
+            ],
+            [
                 'title' => __('general.menu.api-docs'),
                 'url' => '/docs',
                 'icon' => 'file-text',

@@ -25,6 +25,8 @@ Route::namespace(env('BASE_API'))->name('api.')->middleware(['api'])->group(func
         Route::group(['prefix' => 'v1'], function () {
             include('v1/api/section.php');
             include('v1/api/banner.php');
+            include('v1/api/project.php');
+            include('v1/api/projecttype.php');
         });
     });
 

@@ -19,6 +19,16 @@ return [
             'section' => 'Section',
             'banner' => 'Banner'
         ],
+        'project_management' => [
+            'title' => 'Manage Projects',
+            'project' => 'Project',
+            'projects' => 'Projects',
+        ],
+        'project_type_management' => [
+            'title' => 'Manage Project Types',
+            'project_type' => 'Project Type',
+            'project_types' => 'Project Types'
+        ],
         'api-docs' => 'Api Documentations'
     ],
     'dashboard' => [
@@ -29,13 +39,18 @@ return [
 
     'common' => [
         'create' => 'Create',
+        'delete' => 'Delete',
         'dismiss' => 'Dismiss',
         'edit' => 'Edit',
         'heading' => 'Heading',
+        'read' => 'Read',
         'result' => 'Results',
         'search' => 'Search',
         'show' => 'Show',
         'showing_page' => 'Showing page :page of :pages',
         'sub_heading' => 'Sub heading',
+        'update' => 'Update',
+        'title' => 'Title',
+        'description' => 'Description'
     ]
 ];

@@ -76,6 +76,18 @@ final class Acl
     const PERMISSION_BANNER_EDIT      = 'banner edit';
     const PERMISSION_BANNER_DELETE    = 'banner delete';
 
+    const PERMISSION_PROJECT_TYPE_MANAGE = 'manage project type';
+    const PERMISSION_PROJECT_TYPE_LIST   = 'project type list';
+    const PERMISSION_PROJECT_TYPE_ADD    = 'project type add';
+    const PERMISSION_PROJECT_TYPE_EDIT   = 'project type edit';
+    const PERMISSION_PROJECT_TYPE_DELETE = 'project type delete';
+
+    const PERMISSION_PROJECT_MANAGE = 'manage project';
+    const PERMISSION_PROJECT_LIST   = 'project list';
+    const PERMISSION_PROJECT_ADD    = 'project add';
+    const PERMISSION_PROJECT_EDIT   = 'project edit';
+    const PERMISSION_PROJECT_DELETE = 'project delete';
+
     /**
      * @param  array  $exclusives Exclude some permissions from the list
      */
